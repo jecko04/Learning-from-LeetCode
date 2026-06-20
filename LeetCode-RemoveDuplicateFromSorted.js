@@ -4,23 +4,15 @@
  */
 var removeDuplicates = function(nums) {
 
-    const arr = [];
+    let k = 1;
 
-    for (let i = 0; i < nums.length; i++) {
-        const current = nums[i];
-        const next = nums[i + 1];
-
-        // console.log("this is current: " + current );
-        // console.log("this is next: " + next );
-
-        if (current !== next) {
-            arr.push(current);
-            // console.log("this is arr stack: " + arr);
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] !== nums[i - 1]) {
+            nums[k] = nums[i];
+            k++;
         }
     }
-    // console.log("this is arr: " + arr);
-    return arr.length;
-
+    return k;
 };
 
-console.log(removeDuplicates([1,1,3,2,3]));
+console.log(removeDuplicates([0,1,1,3,2,3]));
