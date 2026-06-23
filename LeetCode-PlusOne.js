@@ -13,7 +13,9 @@ var plusOne = function(digits) {
             digits.push(...newDigits);
             return digits;    
         } else {
-            let num2 = digits[i] = newNum += 1;
+            let pushPop = digits.push(newNum);
+            let num2 = Number(digits.join(''));
+            num2 += 1;
             newDigits = Array.from(String(num2), Number);
             digits.push(...newDigits);
             return digits;
@@ -22,5 +24,5 @@ var plusOne = function(digits) {
     
 };
 console.log("this is [9,9]: " + plusOne([9,9]));
-console.log("this is [9]: " + plusOne([9]));
-console.log("this is [1,2,3]: " + plusOne([1,2,3]));
+// console.log("this is [9]: " + plusOne([9]));
+// console.log("this is [1,2,3]: " + plusOne([1,2,3]));
